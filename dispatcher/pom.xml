@@ -11,5 +11,11 @@
 
     <artifactId>dispatcher</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.guanhetingyu.www</groupId>
+            <artifactId>api</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
