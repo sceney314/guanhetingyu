@@ -2,3 +2,6 @@
 .idea/
 target/
 *.iml
+api/*.iml
+dispatcher/*.iml
+provider/*.iml
