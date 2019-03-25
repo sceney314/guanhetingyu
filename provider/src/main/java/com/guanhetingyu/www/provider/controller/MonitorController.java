@@ -10,6 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import redis.clients.jedis.Jedis;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Copyright (C), 2015-2019
@@ -28,6 +32,11 @@ public class MonitorController {
     @ResponseBody
     public Result check(){
         Group group = groupService.getById(1);
-        return BaseResult.success(group);
+        Jedis jedis = new Jedis("127.0.0.1", 6379);
+        String value = jedis.get("testkey");
+        Map<String, Object> map = new HashMap<>();
+        map.put("db", group);
+        map.put("redis", value);
+        return BaseResult.success(map);
     }
 }

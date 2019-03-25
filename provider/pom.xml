@@ -74,6 +74,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!--redis-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
+
         <!--数据库相关开始-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -97,6 +104,8 @@
         </dependency>
         <!--数据库相关结束-->
 
+
+        <!--日志相关开始-->
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -120,6 +129,7 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-web</artifactId>
         </dependency>
+        <!--日志相关结束-->
     </dependencies>
 
     <build>
