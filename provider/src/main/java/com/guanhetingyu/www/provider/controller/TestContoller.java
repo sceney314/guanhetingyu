@@ -1,4 +1,4 @@
-package com.guanhetingyu.www.controller;
+package com.guanhetingyu.www.provider.controller;
 
 /**
  * Copyright (C), 2015-2018

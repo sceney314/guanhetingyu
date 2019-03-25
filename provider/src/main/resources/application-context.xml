@@ -21,7 +21,7 @@
     </bean>
     <!--<import resource="applicationContextConfig.xml"/>-->
     <!--数据库配置-->
-    <!--<import resource="classpath*:applicationContext-dao.xml"/>-->
+    <import resource="classpath*:applicationContext-dao.xml"/>
     <!--mq配置-->
     <!--<import resource="classpath*:rocketmq.xml"/>-->
     <!--elastic job 配置-->

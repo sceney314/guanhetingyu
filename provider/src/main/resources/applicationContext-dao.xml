@@ -25,16 +25,16 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.plg.dhconf.provider.bean.model"/>
-        <property name="mapperLocations" value="classpath*:com/plg/dhconf/mappers/*.xml"/>
+        <property name="typeAliasesPackage" value="com.guanhetingyu.www.dispatcher.model"/>
+        <property name="mapperLocations" value="classpath*:com/guanhetingyu/www/mapper/*.xml"/>
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.plg.dhconf.provider.dao" />
+        <property name="basePackage" value="com.guanhetingyu.www.dispatcher.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
-    <bean id="transactionManager2" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
     </bean>
 
