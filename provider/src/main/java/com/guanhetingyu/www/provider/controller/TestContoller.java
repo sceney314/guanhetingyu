@@ -3,9 +3,12 @@ package com.guanhetingyu.www.provider.controller;
 import com.guanhetingyu.api.base.BaseResult;
 import com.guanhetingyu.api.base.Result;
 import com.guanhetingyu.www.dispatcher.utils.PropertiesUtil;
+import com.guanhetingyu.www.dispatcher.utils.UidGeneratorUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Map;
 
 
 /**
@@ -21,7 +24,9 @@ public class TestContoller {
     @ResponseBody
     @RequestMapping(value = "/testProperty")
     public Result testProperty(){
-
-        return BaseResult.success(PropertiesUtil.getPropertiesMap());
+        Map<String, String> map = PropertiesUtil.getPropertiesMap();
+        UidGeneratorUtil uidGeneratorUtil = new UidGeneratorUtil(0, 0);
+        map.put("UidGenerator", String.valueOf(uidGeneratorUtil.nextId()));
+        return BaseResult.success(map);
     }
 }
